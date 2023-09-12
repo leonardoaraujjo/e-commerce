@@ -1,20 +1,21 @@
+import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Routes from './src/router';
+import { useFonts } from '@expo-google-fonts/anton';
+
 
 export default function App() {
+
+  const [fontsLoaded] = useFonts({
+    Anton: require('@expo-google-fonts/anton')
+  });
+ 
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <StatusBar style="light" backgroundColor='#000' translucent={true}/>
+      <Routes />
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
